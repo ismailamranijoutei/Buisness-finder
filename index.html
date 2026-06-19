@@ -229,40 +229,75 @@
 
 <!-- Subscription Modal -->
 <div class="auth-overlay" id="subscriptionModal">
-  <div class="auth-box" style="max-width: 700px;">
-    <h2>💎 Choose Your Plan</h2>
-    <div class="plans-container">
-      <div class="plan-card free" id="freePlan">
-        <div class="plan-name">🆓 Free</div>
-        <div class="plan-price">$0<span>/month</span></div>
-        <ul class="plan-features">
+  <div class="auth-box" style="max-width: 800px;">
+    <h2 style="text-align:center;margin-bottom:8px;">💎 Upgrade to Premium</h2>
+    <p style="text-align:center;color:#94a3b8;margin-bottom:24px;">Unlock all features with a single payment</p>
+
+    <div class="plans-container" style="grid-template-columns: 1fr 1.2fr; gap: 24px; align-items: start;">
+
+      <!-- Free Plan -->
+      <div class="plan-card free" id="freePlan" style="padding:20px;">
+        <div class="plan-name" style="font-size:1rem;">🆓 Free</div>
+        <div class="plan-price" style="font-size:1.5rem;">$0</div>
+        <ul class="plan-features" style="font-size:0.8rem;">
           <li>5 searches per day</li>
-          <li>Basic filters</li>
+          <li>Basic filters only</li>
           <li>Max 30 results</li>
-          <li class="disabled">Export CSV</li>
-          <li class="disabled">No ads</li>
-          <li class="disabled">Priority support</li>
+          <li class="disabled">❌ No CSV export</li>
+          <li class="disabled">❌ Ads displayed</li>
+          <li class="disabled">❌ No priority support</li>
+          <li class="disabled">❌ Limited data</li>
         </ul>
-        <button class="btn-plan btn-free" id="btnFreePlan">Current Plan</button>
+        <button class="btn-plan btn-free" id="btnFreePlan" style="font-size:0.85rem;padding:10px;">Current Plan</button>
       </div>
-      <div class="plan-card premium" id="premiumPlan">
-        <div class="plan-badge">ONE TIME</div>
-        <div class="plan-name">⭐ Premium</div>
-        <div class="plan-price">$20<span> lifetime</span></div>
-        <ul class="plan-features">
-          <li>Unlimited searches</li>
-          <li>All advanced filters</li>
-          <li>Unlimited results</li>
-          <li>Export to CSV</li>
-          <li>No ads</li>
-          <li>Priority support</li>
-          <li>Lifetime access</li>
+
+      <!-- Premium Plan -->
+      <div class="plan-card premium" id="premiumPlan" style="padding:28px;">
+        <div class="plan-badge" style="background:linear-gradient(135deg,#f59e0b,#fbbf24);">⭐ BEST VALUE</div>
+        <div class="plan-name" style="font-size:1.3rem;">⭐ Premium</div>
+        <div class="plan-price" style="font-size:2.5rem;color:#fbbf24;">$20<span style="font-size:0.9rem;color:#94a3b8;"> one-time</span></div>
+        <div style="background:rgba(245,158,11,0.15);border-radius:8px;padding:8px 12px;margin-bottom:16px;text-align:center;">
+          <span style="color:#fbbf24;font-size:0.8rem;font-weight:600;">🎉 PAY ONCE • USE FOREVER • NO SUBSCRIPTION</span>
+        </div>
+        <ul class="plan-features" style="font-size:0.9rem;">
+          <li>✅ <strong>Unlimited searches</strong> — no daily limit</li>
+          <li>✅ <strong>All advanced filters</strong> — rating, reviews, phone, website</li>
+          <li>✅ <strong>Unlimited results</strong> — up to 100 per search</li>
+          <li>✅ <strong>Export to CSV</strong> — download all data</li>
+          <li>✅ <strong>No ads</strong> — clean experience</li>
+          <li>✅ <strong>Priority support</strong> — get help fast</li>
+          <li>✅ <strong>Lifetime access</strong> — never pay again</li>
+          <li>✅ <strong>Early access</strong> — new features first</li>
         </ul>
-        <button class="btn-plan btn-premium" id="btnPremiumPlan" onclick="showPaymentInfo()">Subscribe</button>
+        <button class="btn-plan btn-premium" id="btnPremiumPlan" onclick="showPaymentInfo()" style="font-size:1rem;padding:14px;margin-top:12px;">🚀 Subscribe Now — $20</button>
+        <p style="text-align:center;font-size:0.7rem;color:#64748b;margin-top:10px;">One-time payment • Lifetime access • No recurring fees</p>
       </div>
     </div>
-    <div style="text-align:center;margin-top:12px;font-size:0.75rem;color:#64748b;">
-      Secure payment via Stripe • Cancel anytime
+
+    <!-- Why Premium Section -->
+    <div style="background:#0f172a;border-radius:12px;padding:20px;margin-top:20px;">
+      <h3 style="color:#f8fafc;margin-bottom:12px;font-size:1rem;text-align:center;">🏆 Why Premium?</h3>
+      <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px;">
+        <div style="text-align:center;">
+          <div style="font-size:2rem;margin-bottom:4px;">🚀</div>
+          <div style="color:#f1f5f9;font-weight:600;font-size:0.85rem;">10x Faster</div>
+          <div style="color:#64748b;font-size:0.75rem;">Unlimited searches, no waiting</div>
+        </div>
+        <div style="text-align:center;">
+          <div style="font-size:2rem;margin-bottom:4px;">📊</div>
+          <div style="color:#f1f5f9;font-weight:600;font-size:0.85rem;">Full Data</div>
+          <div style="color:#64748b;font-size:0.75rem;">Export to CSV anytime</div>
+        </div>
+        <div style="text-align:center;">
+          <div style="font-size:2rem;margin-bottom:4px;">💎</div>
+          <div style="color:#f1f5f9;font-weight:600;font-size:0.85rem;">Lifetime</div>
+          <div style="color:#64748b;font-size:0.75rem;">Pay once, use forever</div>
+        </div>
+      </div>
+    </div>
+
+    <div style="text-align:center;margin-top:16px;">
+      <button onclick="closePaymentModal()" style="background:none;border:1px solid #334155;color:#94a3b8;padding:8px 20px;border-radius:8px;cursor:pointer;font-size:0.85rem;">Maybe Later</button>
     </div>
   </div>
 </div>
@@ -288,6 +323,9 @@
       <button class="btn-logout" id="btnAdminPanel" onclick="showAdminPanel()" style="display:none;background:rgba(139,92,246,0.15);color:#a78bfa;border-color:rgba(139,92,246,0.3);">Admin</button>
       <button class="btn-logout" onclick="handleLogout()">Logout</button>
     </div>
+    <p style="text-align:center;margin-top:12px;font-size:0.7rem;color:#64748b;">
+      ⚠️ Don't log out or you may lose your account. If so, create a new account with the same email and password.
+    </p>
   </div>
 
   <div class="usage-bar" id="usageBar" style="display:none;">
@@ -300,12 +338,22 @@
     </div>
   </div>
 
-  <div class="premium-banner" id="premiumBanner" style="display:none;">
-    <div class="premium-banner-text">
-      <h3>🚀 Go Premium!</h3>
-      <p>Unlock unlimited searches, CSV export, and more</p>
+  <div class="premium-banner" id="premiumBanner" style="display:none;flex-direction:column;gap:12px;">
+    <div style="display:flex;justify-content:space-between;align-items:center;">
+      <div class="premium-banner-text">
+        <h3>🚀 Unlock Premium — $20 Lifetime</h3>
+        <p>Unlimited searches • Export CSV • No ads • Lifetime access</p>
+      </div>
+      <button class="btn-upgrade" onclick="showSubscriptionModal()">Subscribe</button>
     </div>
-    <button class="btn-upgrade" onclick="showSubscriptionModal()">Upgrade Now</button>
+    <div style="display:flex;gap:12px;flex-wrap:wrap;font-size:0.75rem;color:#94a3b8;">
+      <span>✅ Unlimited searches</span>
+      <span>✅ Export to CSV</span>
+      <span>✅ No daily limits</span>
+      <span>✅ No ads</span>
+      <span>✅ Lifetime access</span>
+      <span>💎 One-time payment — never pay again</span>
+    </div>
   </div>
 
   <div class="search-card">
